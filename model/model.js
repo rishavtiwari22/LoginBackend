@@ -1,37 +1,23 @@
 const mongoose = require('mongoose');
 
-const expenseSchema = new mongoose.Schema({
-    campus: {
-        type: String,
+const mongooseSchema = new mongoose.Schema({
+    name:{
         required: true,
-        trim: true  
+        type: String
     },
-    date: {
-        type: String,
-        required: true
-    },
-    house: {
-        type: String,
+    email:{
         required: true,
-        trim: true
+        type: String
     },
-    point: {
-        type: Number,
+    password:{
         required: true,
-        min: 0  
+        type: String
     },
-    rewards: {
-        type: String,
+    isAdmin:{
         required: true,
-        trim: true
-    },
-    amount: {
-        type: Number,
-        required: true,
-        min: 0  
+        type: Boolean
     }
-}, {
-    timestamps: true
+
 });
 
-module.exports = mongoose.model('Expense', expenseSchema);
+module.exports = mongoose.model('Data', mongooseSchema);
